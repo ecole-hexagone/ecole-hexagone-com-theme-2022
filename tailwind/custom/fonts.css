@@ -1,0 +1,77 @@
+/**
+ * Custom `@font-face` rules
+ *
+ * These will be added immediately before Tailwind’s `base` layer.
+ */
+
+ @font-face {
+    font-family: "Flama";
+    src: url("./fonts/Flama.woff2") format("woff2"),
+        url("./fonts/Flama.eot") format("embedded-opentype"),
+        url("./fonts/Flama.woff") format("woff"),
+        url("./fonts/Flama.ttf") format("truetype"),
+        url("./fonts/Flama.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Flama";
+    src: url("./fonts/Flama-Medium.woff2") format("woff2"),
+        url("./fonts/Flama-Medium.eot") format("embedded-opentype"),
+        url("./fonts/Flama-Medium.woff") format("woff"),
+        url("./fonts/Flama-Medium.ttf") format("truetype"),
+        url("./fonts/Flama-Medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Flama";
+    src: url("./fonts/Flama-SemiBold.woff2") format("woff2"),
+        url("./fonts/Flama-SemiBold.eot") format("embedded-opentype"),
+        url("./fonts/Flama-SemiBold.woff") format("woff"),
+        url("./fonts/Flama-SemiBold.ttf") format("truetype"),
+        url("./fonts/Flama-SemiBold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Flama";
+    src: url("./fonts/Flama-Bold.woff2") format("woff2"),
+        url("./fonts/Flama-Bold.eot") format("embedded-opentype"),
+        url("./fonts/Flama-Bold.woff") format("woff"),
+        url("./fonts/Flama-Bold.ttf") format("truetype"),
+        url("./fonts/Flama-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Flama";
+    src: url("./fonts/Flama-Italic.woff2") format("woff2"),
+        url("./fonts/Flama-Italic.eot") format("embedded-opentype"),
+        url("./fonts/Flama-Italic.woff") format("woff"),
+        url("./fonts/Flama-Italic.ttf") format("truetype"),
+        url("./fonts/Flama-Italic.otf") format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Flama";
+    src: url("./fonts/Flama-BoldItalic.woff2") format("woff2"),
+        url("./fonts/Flama-BoldItalic.eot") format("embedded-opentype"),
+        url("./fonts/Flama-BoldItalic.woff") format("woff"),
+        url("./fonts/Flama-BoldItalic.ttf") format("truetype"),
+        url("./fonts/Flama-BoldItalic.otf") format("opentype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}

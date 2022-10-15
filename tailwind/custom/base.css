@@ -1,0 +1,39 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ *
+ * “Add things like base typography styles [or] opinionated global resets.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-base-styles
+ */
+
+/**
+ * This uses the background and foreground colors declared in the
+ * `theme.json` file and is applied both to the frontend and in the block
+ * editor.
+*/
+
+/* @supports(padding:max(0px)) {
+    body, header, footer {
+        padding-left: min(0vmin, env(safe-area-inset-left));
+        padding-right: min(0vmin, env(safe-area-inset-right));
+    }
+} */
+
+body {
+	@apply bg-background font-sans text-foreground;
+}
+
+a[target=_blank] {
+	@apply after:content-['↗'] rtl:after:content-['↖'] hover:underline focus:underline;
+}
+
+[lang^=ar] body {
+	@apply text-lg;
+}
+
+/* RTL enhancements for Tailwind Typography */
+[dir=rtl] .prose :where(ul):not(:where([class~=not-prose] *)),
+[dir=rtl] .prose :where(ul):not(:where([class~=not-prose] *)) {
+	@apply pl-0;
+	padding-right: 1.625em;
+}
