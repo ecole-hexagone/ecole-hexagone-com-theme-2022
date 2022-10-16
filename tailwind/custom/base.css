@@ -20,7 +20,7 @@
 } */
 
 body {
-	@apply bg-background font-sans text-foreground;
+	@apply bg-white font-sans text-text;
 }
 
 a[target=_blank] {
