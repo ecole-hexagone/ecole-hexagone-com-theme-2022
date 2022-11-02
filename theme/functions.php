@@ -9,7 +9,7 @@
 
 if ( ! defined( 'HEXAGONE_2022_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'HEXAGONE_2022_VERSION', '1.0.0' );
+	define( 'HEXAGONE_2022_VERSION', '1.1' );
 }
 
 if ( ! function_exists( 'hexagone_2022_setup' ) ) :
@@ -176,38 +176,36 @@ function hexagone_2022_tinymce_add_class( $settings ) {
 }
 add_filter( 'tiny_mce_before_init', 'hexagone_2022_tinymce_add_class' );
 
-/**
- * Automatic theme updates from the GitHub repository
- */
-function automatic_GitHub_updates($data) {
-  // Theme information
-  $theme   = get_stylesheet(); // Folder name of the current theme
-  $current = wp_get_theme()->get('Version'); // Get the version of the current theme
-  // GitHub information
-  $user = 'ecole-hexagone'; // The GitHub username hosting the repository
-  $repo = 'ecole-hexagone-com-theme-2022'; // Repository name as it appears in the URL
-  // Get the latest release tag from the repository. The User-Agent header must be sent, as per
-  // GitHub's API documentation: https://developer.github.com/v3/#user-agent-required
-  $file = @json_decode(@file_get_contents('https://api.github.com/repos/'.$user.'/'.$repo.'/releases/latest', false,
-      stream_context_create(['http' => ['header' => "User-Agent: ".$user."\r\n"]])
-  ));
-  if($file) {
-	$update = filter_var($file->tag_name, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-    // Only return a response if the new version number is higher than the current version
-    if($update > $current) {
-  	  $data->response[$theme] = array(
-	      'theme'       => $theme,
-	      // Strip the version number of any non-alpha characters (excluding the period)
-	      // This way you can still use tags like v1.1 or ver1.1 if desired
-	      'new_version' => $update,
-	      'url'         => 'https://github.com/'.$user.'/'.$repo,
-	      'package'     => $file->assets[0]->browser_download_url,
-      );
-    }
-  }
-  return $data;
+function update_themes_github_com($update, $theme_data, $theme_stylesheet, $locales) {
+	$current = filter_var($theme_data['Version'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+
+	$user = 'ecole-hexagone'; // The GitHub username hosting the repository
+	$repo = 'ecole-hexagone-com-theme-2022'; // Repository name as it appears in the URL
+
+	$request = wp_remote_get( 'https://api.github.com/repos/'.$user.'/'.$repo.'/releases/latest' );
+	if( is_wp_error( $request ) ) {
+		return false;
+	}
+	$body = wp_remote_retrieve_body( $request );
+
+	$file = json_decode( $body );
+
+	if ($file) {
+	  $new_version = filter_var($file->tag_name, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+	  // Only return a response if the new version number is higher than the current version
+	  if($new_version > $current) {
+			$update = array(
+				'theme'        => 'hexagone-2022',
+				'version'      => $new_version,
+				'url'          => $theme_data['UpdateURI'],
+				'package'      => $file->assets[0]->browser_download_url
+			);
+	  }
+	}
+
+	return $update;
 }
-add_filter('pre_set_site_transient_update_themes', 'automatic_GitHub_updates', 100, 1);
+add_filter('update_themes_github.com', 'update_themes_github_com', 100, 4 );
 
 /**
  * Custom template tags for this theme.
@@ -218,3 +216,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Plugins-specific overrides
+ */
+require get_template_directory() . '/inc/plugins-overrides.php';
