@@ -9,7 +9,7 @@
 
 if ( ! defined( 'HEXAGONE_2022_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'HEXAGONE_2022_VERSION', '1.1' );
+	define( 'HEXAGONE_2022_VERSION', '1.2' );
 }
 
 if ( ! function_exists( 'hexagone_2022_setup' ) ) :
@@ -216,6 +216,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Multisite generic settings
+ */
+require get_template_directory() . '/inc/multisite-settings.php';
 
 /**
  * Plugins-specific overrides

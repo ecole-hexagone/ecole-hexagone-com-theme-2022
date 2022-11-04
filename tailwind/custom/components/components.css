@@ -204,6 +204,11 @@ p.is-style-hexagone-cta a,
 	@apply hexa-cta;
 }
 
+.wp-block-file.is-style-hexagone-cta:not(.wp-element-button) {
+	/* Reset default styles*/
+	font-size: initial;
+}
+
 .wp-block-latest-posts {
 	@apply grid gap-4 sm:grid-cols-2 md:gap-8 md:grid-cols-3 ;
 }
