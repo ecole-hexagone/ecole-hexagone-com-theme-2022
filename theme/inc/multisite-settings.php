@@ -4,6 +4,7 @@
  * - Permalink format and categories/tags prefix
  * - Default to 12 posts per page
  * - Disable avatars
+ * - Disable sample post/page/comment creation
  *
  * @package Hexagone_2022
  */
@@ -27,6 +28,11 @@ function wpdocs_action_wp_initialize_site( WP_Site $new_site ) : void {
     update_option( 'posts_per_page', 12 );
 
     update_option( 'show_avatars', 0 );
+
+    // 'Hello World!' post
+    wp_delete_post( 1, true );
+    // 'Sample page' page
+    wp_delete_post( 2, true );
 
 	restore_current_blog();
 }
