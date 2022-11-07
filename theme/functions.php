@@ -51,7 +51,6 @@ if ( ! function_exists( 'hexagone_2022_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => __( 'Primary', 'hexagone-2022' ),
-				'menu-2' => __( 'Footer Menu', 'hexagone-2022' ),
 			)
 		);
 
