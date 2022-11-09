@@ -1,11 +1,7 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * Template Name: Full width
+ * The template for displaying pages without default prose style
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -24,7 +20,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content/content', 'page' );
+				get_template_part( 'template-parts/content/content', 'page-full-width' );
 			endwhile; // End of the loop.
 			?>
 

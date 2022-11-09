@@ -77,13 +77,6 @@ function hexagone_2022_can_show_post_thumbnail() {
 }
 
 /**
- * Returns the size for avatars used in the theme.
- */
-function hexagone_2022_get_avatar_size() {
-	return 60;
-}
-
-/**
  * Create the continue reading link
  */
 function hexagone_2022_continue_reading_link() {

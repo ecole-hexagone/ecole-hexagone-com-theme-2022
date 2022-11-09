@@ -13,10 +13,11 @@ if ( ! function_exists( 'hexagone_2022_posted_on' ) ) :
 	 */
 	function hexagone_2022_posted_on() {
 		$time_string = '<time datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			// Hexa:
-			$time_string = __( '<time datetime="%1$s">%2$s</time> - Last modification: <time datetime="%3$s">%4$s</time>', 'hexagone-2022' );
-		}
+		
+		// if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		// 	// Hexa:
+		// 	$time_string = __( '<time datetime="%1$s">%2$s</time> - Last modification: <time datetime="%3$s">%4$s</time>', 'hexagone-2022' );
+		// }
 
 		$time_string = sprintf(
 			$time_string,
@@ -111,27 +112,6 @@ if ( ! function_exists( 'hexagone_2022_entry_meta' ) ) :
 			// 	);
 			// }
 		}
-
-		// Comment count.
-		if ( ! is_singular() ) {
-			hexagone_2022_comment_count();
-		}
-
-		// Edit post link.
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'hexagone-2022' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
 	}
 endif;
 
@@ -175,27 +155,6 @@ if ( ! function_exists( 'hexagone_2022_entry_footer' ) ) :
 			// 	);
 			// }
 		}
-
-		// Comment count.
-		if ( ! is_singular() ) {
-			hexagone_2022_comment_count();
-		}
-
-		// Edit post link.
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', 'hexagone-2022' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
 	}
 endif;
 
@@ -229,44 +188,6 @@ if ( ! function_exists( 'hexagone_2022_post_thumbnail' ) ) :
 
 			<?php
 		endif; // End is_singular().
-	}
-endif;
-
-if ( ! function_exists( 'hexagone_2022_comment_avatar' ) ) :
-	/**
-	 * Returns the HTML markup to generate a user avatar.
-	 *
-	 * @param mixed $id_or_email The Gravatar to retrieve. Accepts a user_id, gravatar md5 hash,
-	 *                           user email, WP_User object, WP_Post object, or WP_Comment object.
-	 */
-	function hexagone_2022_get_user_avatar_markup( $id_or_email = null ) {
-
-		if ( ! isset( $id_or_email ) ) {
-			$id_or_email = get_current_user_id();
-		}
-
-		return sprintf( '<div class="vcard">%s</div>', get_avatar( $id_or_email, hexagone_2022_get_avatar_size() ) );
-	}
-endif;
-
-if ( ! function_exists( 'hexagone_2022_discussion_avatars_list' ) ) :
-	/**
-	 * Displays a list of avatars involved in a discussion for a given post.
-	 *
-	 * @param array $comment_authors Comment authors to list as avatars.
-	 */
-	function hexagone_2022_discussion_avatars_list( $comment_authors ) {
-		if ( empty( $comment_authors ) ) {
-			return;
-		}
-		echo '<ol>', "\n";
-		foreach ( $comment_authors as $id_or_email ) {
-			printf(
-				"<li>%s</li>\n",
-				hexagone_2022_get_user_avatar_markup( $id_or_email ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			);
-		}
-		echo '</ol>', "\n";
 	}
 endif;
 

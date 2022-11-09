@@ -1,0 +1,16 @@
+.footer .wp-block-columns {
+	@apply mb-0;
+}
+
+.footer .wp-block-columns .wp-block-column:last-child {
+	@apply text-center md:text-inherit last:md:text-right last:md:rtl:text-left;
+}
+
+.footer .wp-block-columns .wp-block-image:last-child {
+	@apply mb-0;
+}
+
+.footer .wp-block-social-links .wp-social-link a {
+	/* Reset default styles*/
+	@apply after:content-[''] rtl:after:content-[''] hover:no-underline focus:no-underline;
+}

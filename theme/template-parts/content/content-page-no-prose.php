@@ -8,8 +8,8 @@
  */
 
 ?>
-<?php /* Template Name: Example Template */ ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( ); ?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'max-w-7xl mx-4 md:mx-auto' ); ?>>
 
 	<header class="entry-header">
 		<?php
@@ -35,26 +35,5 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers. */
-						__( 'Edit <span class="sr-only">%s</span>', 'hexagone-2022' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

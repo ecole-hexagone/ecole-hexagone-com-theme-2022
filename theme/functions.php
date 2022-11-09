@@ -124,33 +124,6 @@ add_action( 'widgets_init', 'hexagone_2022_widgets_init' );
 function hexagone_2022_scripts() {
 	wp_enqueue_style( 'hexagone-2022-style', get_stylesheet_uri(), array(), HEXAGONE_2022_VERSION );
 	wp_enqueue_script( 'hexagone-2022-script', get_template_directory_uri() . '/js/script.min.js', array(), HEXAGONE_2022_VERSION, true );
-
-	// Hexa: Remove comments
-	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	// 	wp_enqueue_script( 'comment-reply' );
-	// }
-
-	// Hexa: Add styles for core blocks
-	$styled_blocks = [];
-	foreach ( $styled_blocks as $block_name ) {
-		$args = array(
-			'handle' => "hexagone-2022-$block_name",
-			'src'    => get_theme_file_uri( "css/blocks/core/$block_name.css" ),
-			$args['path'] = get_theme_file_path( "css/blocks/core/$block_name.css" ),
-		);
-		wp_enqueue_block_style( "core/$block_name", $args );
-	}
-
-	// Hexa: Add styles for custom blocks
-	$styled_blocks = [];
-	foreach ( $styled_blocks as $block_name ) {
-		$args = array(
-			'handle' => "hexagone-2022-$block_name",
-			'src'    => get_theme_file_uri( "css/blocks/hexagone-2022/$block_name.css" ),
-			$args['path'] = get_theme_file_path( "css/blocks/hexagone-2022/$block_name.css" ),
-		);
-		wp_enqueue_block_style( "hexagone-2022/$block_name", $args );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'hexagone_2022_scripts' );
 
