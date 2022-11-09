@@ -15,3 +15,13 @@ wp.blocks.registerBlockStyle( 'core/file', {
     name: 'hexagone-cta',
     label: 'Hexagone CTA',
 } );
+
+wp.blocks.registerBlockStyle( 'core/query', {
+    name: 'hexagone-most-recent-featured',
+    label: 'Most recent entry featured',
+} );
+
+wp.blocks.registerBlockStyle( 'core/group', {
+    name: 'hexagone-padded-group',
+    label: 'Padded',
+} );

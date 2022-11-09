@@ -79,6 +79,11 @@ module.exports = {
 						'h4 strong': {
 							fontWeight: '600',
 						},
+						'img': {
+							aspectRatio: '8/5',
+							objectFit: 'cover',
+							objectPosition: 'center',
+						},
 					},
 				},
 			} ),

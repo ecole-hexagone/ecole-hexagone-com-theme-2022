@@ -8,114 +8,6 @@
  * — from https://tailwindcss.com/docs/plugins#adding-components
  */
 
-.header {
-	@apply sticky top-0 z-30 w-full border-b border-light-grey bg-white text-purple;
-	@apply px-4 py-2;
-}
-
-.navbar {
-	@apply flex flex-row items-center justify-between;
-}
-
-.header .custom-logo-link {
-	@apply lg:-order-1;
-}
-
-.header .custom-logo {
-	@apply mx-auto w-28 h-10;
-}
-
-nav.navbar-menu ul li {
-    @apply inline-block px-4;
-}
-
-nav.navbar-menu#langs-navigation ul li {
-	@apply px-0;
-}
-
-nav.navbar-menu a {
-    @apply flex flex-row items-center my-2 transition-colors duration-200;
-}
-
-nav.navbar-menu ul ul li a:focus,
-nav.navbar-menu ul ul li a:active {
-    @apply text-yellow;
-}
-nav.navbar-menu a:hover,
-nav.navbar-menu a:focus,
-nav.navbar-menu a:active,
-nav.navbar-menu a:focus:hover,
-nav.navbar-menu a:active:hover {
-    @apply text-yellow;
-}
-
-nav.navbar-menu ul ul {
-    @apply hidden absolute origin-top-right bg-background shadow;
-}
-nav.navbar-menu ul ul li {
-	@apply relative list-item;
-}
-
-nav.navbar-menu ul li:focus > ul,
-nav.navbar-menu ul li:active > ul,
-nav.navbar-menu ul li:focus > div.wpml-ls > ul,
-nav.navbar-menu ul li:active > div.wpml-ls > ul {
-    display: inherit;
-}
-
-nav.navbar-menu ul li.menu-item-has-children > a::after,
-nav.navbar-menu#langs-navigation > ul > li > a::after {
-	content: "";
-	@apply h-4 w-4 bg-purple transform transition-transform duration-200;
-	clip-path: path("M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z");
-	/* background-image: url("data:image/svg+xml,%3Csvg fill='currentColor' viewBox='0 0 20 20'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E"); */
-}
-
-nav.navbar-menu#langs-navigation > ul > li > a:focus::after,
-nav.navbar-menu#langs-navigation > ul > li > a:active::after {
-    @apply rotate-180 bg-yellow;
-}
-
-nav.navbar-menu a:focus + ul,
-nav.navbar-menu a:active + ul,
-nav.navbar-menu a:focus + div.wpml-ls > ul,
-nav.navbar-menu a:active + div.wpml-ls ul {
-    display: inherit;
-}
-
-.hexa-cta {
-	@apply relative inline-block overflow-hidden;
-    @apply py-2 pr-14 rtl:pr-0 rtl:pl-14;
-    @apply font-medium uppercase;
-    @apply text-purple;
-}
-
-.hexa-cta::before {
-	@apply absolute inset-0;
-    @apply bg-right bg-no-repeat;
-    @apply rtl:-scale-x-100;
-    background-size: 3rem;
-    content: "";
-	background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Calque_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 50.7 34.9' style='enable-background:new 0 0 50.7 34.9;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23FFD200;%7D .st1%7Bfill-rule:evenodd;clip-rule:evenodd;fill:%23310046;%7D%0A%3C/style%3E%3Cg id='Group' transform='translate(135.000000, 0.000000)'%3E%3Cpath id='Fill-1_5_' class='st0' d='M-85.3,8.1l-14.1-7.8c-0.6-0.3-1.3-0.3-1.9,0l-3.2,1.8l-6.2,3.4l-4.7,2.6c-0.6,0.3-1,0.9-1,1.6 v15.6c0,0.7,0.4,1.3,1,1.6l14.1,7.8c0.6,0.3,1.3,0.3,1.9,0l14.1-7.8c0.6-0.3,1-0.9,1-1.6v-2.9v-7.7v-5C-84.3,9-84.7,8.4-85.3,8.1' /%3E%3Cg id='_x30_1-Atomes-_x2F_-02-Icones-_x2F_-05-Arrow-_x2F_-02-Right'%3E%3Cpath id='Fill-1_6_' class='st1' d='M-103.2,16.9l-4.8-4.8c-0.1-0.2-0.4-0.2-0.6-0.2c-0.2,0-0.4,0.1-0.6,0.2 c-0.2,0.1-0.2,0.3-0.2,0.5c0,0.2,0.1,0.4,0.2,0.5l3.4,3.4h-28.6c-0.4,0-0.7,0.4-0.7,0.8c0,0.4,0.3,0.8,0.7,0.8h28.6l-3.4,3.3 c-0.2,0.1-0.2,0.3-0.2,0.5c0,0.2,0.1,0.4,0.2,0.5c0.1,0.2,0.4,0.2,0.6,0.2c0.2,0,0.4-0.1,0.6-0.2l4.8-4.6c0.2-0.1,0.2-0.3,0.2-0.5 C-102.9,17.2-103,17-103.2,16.9'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
-}
-
-.footer .wp-block-columns {
-	@apply mb-0;
-}
-
-.footer .wp-block-columns .wp-block-column:last-child {
-	@apply text-right rtl:text-left;
-}
-
-.footer .wp-block-columns .wp-block-image:last-child {
-	@apply mb-0;
-}
-
-.footer .wp-block-social-links .wp-social-link a {
-	/* Reset default styles*/
-	@apply after:content-[''] rtl:after:content-[''] hover:no-underline focus:no-underline;
-}
-
 /**
  * Post title styles
  *
@@ -130,10 +22,10 @@ nav.navbar-menu a:active + div.wpml-ls ul {
  */
 $(post-title-selector) {
 	@apply md:mx-auto md:text-center;
+}
 
-	strong {
-		@apply font-semibold;
-	}
+$(post-title-selector) strong {
+	@apply font-semibold;
 }
 
 /**
@@ -174,58 +66,26 @@ $(prose-selector) {
 	@apply max-w-content md:mx-auto;
 }
 
-.page-content >  .alignwide,
 .entry-content > .alignwide {
 	/* Wide width from the `theme.json` file */
-	@apply mx-4 md:mx-auto max-w-7xl;
+	@apply max-w-7xl mx-4 md:mx-auto;
 }
 
-.page-content >  .alignfull,
 .entry-content > .alignfull {
 	@apply max-w-none;
 }
 
-.page-content >  .alignleft,
 .entry-content > .alignleft {
 	@apply float-left mr-4 rtl:float-right rtl:mr-auto rtl:ml-4;
 }
 
-.page-content >  .alignright,
 .entry-content > .alignright {
 	@apply float-right ml-4 rtl:float-left rtl:ml-auto rtl:mr-4;
 }
 
 /**
  * Theme styles
- *
  */
 .entry-meta::before {
 	@apply content-['⬢'] text-yellow;
-}
-
-/**
- * Block styles
- *
- *
- */
-.wp-block-button.is-style-hexagone-cta a {
-	/* Reset default styles */
-	@apply bg-transparent rounded-none shadow-none text-inherit p-0;
-	@apply hexa-cta;
-}
-
-p.is-style-hexagone-cta a,
-.wp-block-file.is-style-hexagone-cta a {
-	/* Reset in case of _target blank */
-	@apply after:content-[''] rtl:after:content-[''] hover:no-underline focus:no-underline;
-	@apply hexa-cta;
-}
-
-.wp-block-file.is-style-hexagone-cta:not(.wp-element-button) {
-	/* Reset default styles*/
-	font-size: initial;
-}
-
-.wp-block-latest-posts {
-	@apply grid gap-4 sm:grid-cols-2 md:gap-8 md:grid-cols-3 ;
 }
