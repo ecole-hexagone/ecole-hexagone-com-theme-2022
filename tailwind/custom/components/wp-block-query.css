@@ -45,7 +45,3 @@
 .wp-block-query .wp-block-post-template .wp-block-post-excerpt__more-link {
     @apply hexa-cta;
 }
-
-.has-yellow-background-color .wp-block-query .wp-block-post-template .wp-block-post-excerpt__more-link {
-	@apply hexa-cta-white;
-}

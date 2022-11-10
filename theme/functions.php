@@ -9,7 +9,7 @@
 
 if ( ! defined( 'HEXAGONE_2022_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'HEXAGONE_2022_VERSION', '1.5' );
+	define( 'HEXAGONE_2022_VERSION', '1.5.1' );
 }
 
 if ( ! function_exists( 'hexagone_2022_setup' ) ) :

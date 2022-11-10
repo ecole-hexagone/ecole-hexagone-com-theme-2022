@@ -17,7 +17,7 @@ h6.is-style-hexagone-right-decorum-heading {
 .is-style-hexagone-left-decorum-heading,
 .is-style-hexagone-right-decorum-heading,
 .is-style-hexagone-center-decorum-heading {
-    @apply text-purple;
+    @apply text-purple mt-[1em];
 }
 
 .is-style-hexagone-left-decorum-heading::before,
