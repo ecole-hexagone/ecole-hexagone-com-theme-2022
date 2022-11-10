@@ -26,10 +26,7 @@
 	@apply hexa-cta;
 }
 
-p.is-style-hexagone-cta a,
 .wp-block-file.is-style-hexagone-cta a {
-	/* Reset in case of _target blank */
-	@apply after:content-[''] rtl:after:content-[''] hover:no-underline focus:no-underline;
 	@apply hexa-cta;
 }
 

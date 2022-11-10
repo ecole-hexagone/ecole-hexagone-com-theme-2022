@@ -1,3 +1,11 @@
+const round = (num) =>
+  num
+    .toFixed(7)
+    .replace(/(\.[0-9]+?)0+$/, '$1')
+    .replace(/\.0$/, '');
+const rem = (px) => `${round(px / 16)}rem`;
+const em = (px, base) => `${round(px / base)}em`;
+
 module.exports = {
 	theme: {
 		extend: {
@@ -47,16 +55,29 @@ module.exports = {
 				},
 				DEFAULT: {
 					css: {
-						maxWidth: "80ch",
-						textAlign: "justify",
+						maxWidth: '80ch',
+						p: {
+							textAlign: 'justify',
+						},
 						a: {
-							textDecoration: "none",
+							textDecoration: 'none',
+						},
+						'p a:hover, p a:focus': {
+							textDecoration: 'underline',
+						},
+						'p a::after': {
+							content: '"↗"',
+						},
+						'[dir="rtl"] p a::after': {
+							content: '"↖"',
 						},
 						strong: {
-							fontWeight: "500",
+							fontWeight: '500',
 						},
 						h1: {
 							fontWeight: '500',
+							marginTop: em(24, 30),
+							marginBottom: em(24, 30),
 						},
 						'h1 strong': {
 							fontWeight: '600',
@@ -78,11 +99,6 @@ module.exports = {
 						},
 						'h4 strong': {
 							fontWeight: '600',
-						},
-						'img': {
-							aspectRatio: '8/5',
-							objectFit: 'cover',
-							objectPosition: 'center',
 						},
 					},
 				},

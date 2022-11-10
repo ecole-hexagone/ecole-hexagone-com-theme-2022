@@ -45,6 +45,30 @@
 		"layout": {
 			"contentSize": "80ch",
 			"wideSize": "1280px"
+		},
+		"typography": {
+			"fontSizes": [
+				{
+					"name": "Small",
+					"slug": "small",
+					"size": "16px"
+				},
+				{
+					"name": "Medium",
+					"slug": "medium",
+					"size": "22px"
+				},
+				{
+					"name": "Large",
+					"slug": "large",
+					"size": "24px"
+				},
+				{
+					"name": "xLarge",
+					"slug": "xlarge",
+					"size": "56px"
+				}
+			]
 		}
 	}
 }

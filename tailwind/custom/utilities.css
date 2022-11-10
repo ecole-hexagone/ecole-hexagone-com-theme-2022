@@ -7,10 +7,22 @@
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
 
+.wp-block-image:last-child {
+    @apply mb-0;
+}
+
 :where(.wp-block-group.has-background) {
     @apply p-0;
 }
 
 .wp-block-group.is-style-hexagone-padded-group {
     @apply p-4 md:p-8;
+}
+
+.wp-block-group.is-style-hexagone-padded-x-group {
+    @apply px-4 md:px-8;
+}
+
+.wp-block-group.is-style-hexagone-padded-y-group {
+    @apply py-4 md:py-8;
 }

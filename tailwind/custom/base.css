@@ -23,12 +23,18 @@ body {
 	@apply bg-white font-sans text-text;
 }
 
-a[target=_blank] {
-	@apply after:content-['↗'] rtl:after:content-['↖'] hover:underline focus:underline;
-}
-
 [lang^=ar] body {
 	@apply text-lg;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+	@apply text-purple font-medium;
+}
+
+h1 strong, h2 strong, h3 strong,
+h4 strong, h5 strong, h6 strong {
+	@apply font-semibold;
 }
 
 /* RTL enhancements for Tailwind Typography */
