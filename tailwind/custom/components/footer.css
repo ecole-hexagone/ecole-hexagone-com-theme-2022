@@ -2,8 +2,8 @@
 	@apply mb-0;
 }
 
-.footer .wp-block-columns .wp-block-column:last-child {
-	@apply text-center md:text-inherit last:md:text-right last:md:rtl:text-left;
+.footer .wp-block-columns .wp-block-column {
+	@apply text-center md:text-inherit first:md:text-left first:md:rtl:text-right last:md:text-right last:md:rtl:text-left;
 }
 
 .footer .wp-block-columns .wp-block-image:last-child {
